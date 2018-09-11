@@ -1,0 +1,107 @@
+$critical-width-max: 500px;
+$critical-width-min: $critical-width-max + 1;
+
+.stocks-list {
+  background: rgb(25, 39, 56);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.stocks-item__symbol {
+  padding-left: 12px;
+  width: 1%;
+  white-space: nowrap;
+}
+
+.stocks-item__company {
+  padding-left: 12px;
+  @media screen and (max-width: $critical-width-max) {
+    display: none;
+  }
+}
+
+.stocks-item__price {
+  padding-left: 12px;
+  text-align: right;
+  @media screen and (min-width: $critical-width-min) {
+    width: 1%;
+    white-space: nowrap;
+  }
+  .td-content {
+    right: 12px;
+  }
+}
+
+.stocks-item__price__currency {
+  text-transform: uppercase;
+  color: rgb(180, 191, 204);
+  font-size: 12px;
+}
+
+.stocks-item__price-change {
+  padding-left: 6px;
+  padding-right: 12px;
+  font-size: 12px;
+  text-align: right;
+}
+
+.stocks-item__price-change--up {
+  .stocks-item__price__percentage, .stocks-item__price__change {
+    color: rgb(0, 204, 102);
+  }
+}
+
+.stocks-item__price-change--down {
+  .stocks-item__price__percentage, .stocks-item__price__change {
+    color: rgb(242, 95, 92);
+  }
+}
+
+.stocks-item__price-change__percentage {
+  padding-left: 6px;
+}
+
+.stocks-item {
+  line-height: 24px;
+}
+
+.td-container {
+  position: relative;
+}
+.td-content {
+  position: absolute;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.td-spacer {
+  height: 0;
+  overflow: hidden;
+}
+
+.stocks-item__price__change {
+  padding-left: 6px;
+  font-size: 12px;
+}
+
+.stocks-item__price__percentage {
+  padding-left: 6px;
+  font-size: 12px;
+}
+
+.stocks-item__price__right-wrap {
+  width: 110px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stock-table-nothing {
+  text-align: center;
+  padding: 20px 0;
+  line-height: 100px;
+  color: #a7afb9;
+}

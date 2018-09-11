@@ -1,0 +1,23 @@
+<table class="stocks-list">
+  <tr class="stocks-item" *ngFor="let item of data">
+    <td class="stocks-item__symbol">
+      {{item.symbol}}
+    </td>
+    <td class="stocks-item__company" title="{{item.name}}">
+      <div class="td-container">
+        <div class="td-content">{{item.name}}</div>
+        <div class="td-spacer">{{item.name}}</div>
+        <span>&nbsp;</span>
+      </div>
+    </td>
+    <td class="stocks-item__price">
+      {{item.price | number}} <span class="stocks-item__price__currency">{{item.currency}}</span>
+    </td>
+    <td class="stocks-item__price__right-wrap" [ngClass]="{'stocks-item__price-change--up': item.up, 'stocks-item__price-change--down': !item.up}">
+      <span *ngIf="item.priceDiff" class="stocks-item__price__change">{{item.priceDiff | number}}</span><span *ngIf="item.priceDiff" class="stocks-item__price__percentage">({{item.percentDiff | number}}%)</span>
+    </td>
+  </tr>
+  <tr class="stock-table-nothing" *ngIf="!data?.length && !loading">
+    Nothing to show
+  </tr>
+</table>
